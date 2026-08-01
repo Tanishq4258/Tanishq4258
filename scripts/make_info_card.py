@@ -16,6 +16,13 @@ STACK = " Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js"
 INTERESTS = "AI/ML, Web Systems, IoT & Hardware"
 HIGHLIGHTS = "Building Intellitrade"
 
+line_styles = "".join(f"""
+    .line-{i} {{
+      animation: fadeIn 0.4s ease-out {0.1 + i * 0.15}s forwards;
+      opacity: {1 if STATIC else 0};
+      transform: translateY(5px);
+    }}""" for i in range(7))
+
 SVG_TEMPLATE = f"""<svg fill="none" width="490" height="340" viewBox="0 0 490 340" xmlns="http://www.w3.org/2000/svg">
   <style>
     .bg {{ fill: #0d1117; rx: 10px; ry: 10px; stroke: #30363d; stroke-width: 1px; }}
@@ -28,12 +35,7 @@ SVG_TEMPLATE = f"""<svg fill="none" width="490" height="340" viewBox="0 0 490 34
     .val {{ font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #c9d1d9; }}
     .prompt {{ font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #7fe436; font-weight: bold; }}
     
-    {"".join(f"""
-    .line-{i} {{
-      animation: fadeIn 0.4s ease-out {0.1 + i * 0.15}s forwards;
-      opacity: {1 if STATIC else 0};
-      transform: translateY(5px);
-    }}""" for i in range(7))}
+    {line_styles}
 
     @keyframes fadeIn {{
       to {{
