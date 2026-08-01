@@ -1,6 +1,6 @@
 <svg fill="none" width="490" height="340" viewBox="0 0 490 340" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg { fill: #0d1117; rx: 10px; ry: 10px; stroke: #30363d; stroke-width: 1px; }
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1px; }
     .title-bar { fill: #161b22; }
     .dot-red { fill: #ff5f56; }
     .dot-yellow { fill: #ffbd2e; }
@@ -9,54 +9,10 @@
     .key { font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #58a6ff; font-weight: bold; }
     .val { font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #c9d1d9; }
     .prompt { font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #7fe436; font-weight: bold; }
-    
-    
-    .line-0 {
-      animation: fadeIn 0.4s ease-out 0.1s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    .line-1 {
-      animation: fadeIn 0.4s ease-out 0.25s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    .line-2 {
-      animation: fadeIn 0.4s ease-out 0.4s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    .line-3 {
-      animation: fadeIn 0.4s ease-out 0.5499999999999999s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    .line-4 {
-      animation: fadeIn 0.4s ease-out 0.7s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    .line-5 {
-      animation: fadeIn 0.4s ease-out 0.85s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-    .line-6 {
-      animation: fadeIn 0.4s ease-out 0.9999999999999999s forwards;
-      opacity: 0;
-      transform: translateY(5px);
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
   </style>
 
   <!-- Card Background -->
-  <rect class="bg" width="490" height="340" />
+  <rect class="bg" width="490" height="340" rx="10" ry="10" />
 
   <!-- Terminal Header Bar -->
   <path class="title-bar" d="M 0 10 C 0 4.477 4.477 0 10 0 L 480 0 C 485.523 0 490 4.477 490 10 L 490 32 L 0 32 Z" />
@@ -68,44 +24,44 @@
   <!-- Neofetch Content Lines -->
   <g transform="translate(24, 60)">
     <!-- Line 0: User Header -->
-    <g class="line-0">
+    <g>
       <text class="prompt" x="0" y="0">Tanishq Chhabra</text>
       <text class="val" x="120" y="0">@github</text>
       <line x1="0" y1="10" x2="442" y2="10" stroke="#30363d" stroke-width="1"/>
     </g>
 
     <!-- Line 1: Role -->
-    <g class="line-1" transform="translate(0, 35)">
+    <g transform="translate(0, 35)">
       <text class="key" x="0" y="0">Role</text>
       <text class="val" x="100" y="0">› Software Developer &amp; Engineering Student</text>
     </g>
 
     <!-- Line 2: Location -->
-    <g class="line-2" transform="translate(0, 65)">
+    <g transform="translate(0, 65)">
       <text class="key" x="0" y="0">Location</text>
       <text class="val" x="100" y="0">› Chandiarh, India</text>
     </g>
 
     <!-- Line 3: Stack -->
-    <g class="line-3" transform="translate(0, 95)">
+    <g transform="translate(0, 95)">
       <text class="key" x="0" y="0">Stack</text>
       <text class="val" x="100" y="0">› Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js</text>
     </g>
 
     <!-- Line 4: Focus -->
-    <g class="line-4" transform="translate(0, 125)">
+    <g transform="translate(0, 125)">
       <text class="key" x="0" y="0">Interests</text>
       <text class="val" x="100" y="0">› AI/ML, Web Systems, IoT &amp; Hardware</text>
     </g>
 
     <!-- Line 5: Highlights -->
-    <g class="line-5" transform="translate(0, 155)">
+    <g transform="translate(0, 155)">
       <text class="key" x="0" y="0">Projects</text>
       <text class="val" x="100" y="0">› Building Intellitrade</text>
     </g>
 
     <!-- Line 6: Color Palette Bar -->
-    <g class="line-6" transform="translate(0, 195)">
+    <g transform="translate(0, 195)">
       <rect fill="#21262d" x="0" y="0" width="20" height="12" rx="2" />
       <rect fill="#ff7b72" x="26" y="0" width="20" height="12" rx="2" />
       <rect fill="#7ee787" x="52" y="0" width="20" height="12" rx="2" />

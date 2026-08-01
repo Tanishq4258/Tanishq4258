@@ -6,9 +6,6 @@ Generate an animated SVG card (info-card.svg) styled like neofetch.
 import html
 import os
 
-# Set STATIC=1 in environment variables if you want a non-animated preview frame
-STATIC = os.getenv("STATIC") == "1"
-
 # Customize your information here
 NAME = "Tanishq Chhabra"
 TITLE = html.escape("Software Developer & Engineering Student")
@@ -17,16 +14,9 @@ STACK = html.escape("Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.j
 INTERESTS = html.escape("AI/ML, Web Systems, IoT & Hardware")
 HIGHLIGHTS = "Building Intellitrade"
 
-line_styles = "".join(f"""
-    .line-{i} {{
-      animation: fadeIn 0.4s ease-out {0.1 + i * 0.15}s forwards;
-      opacity: {1 if STATIC else 0};
-      transform: translateY(5px);
-    }}""" for i in range(7))
-
 SVG_TEMPLATE = f"""<svg fill="none" width="490" height="340" viewBox="0 0 490 340" xmlns="http://www.w3.org/2000/svg">
   <style>
-    .bg {{ fill: #0d1117; rx: 10px; ry: 10px; stroke: #30363d; stroke-width: 1px; }}
+    .bg {{ fill: #0d1117; stroke: #30363d; stroke-width: 1px; }}
     .title-bar {{ fill: #161b22; }}
     .dot-red {{ fill: #ff5f56; }}
     .dot-yellow {{ fill: #ffbd2e; }}
@@ -35,19 +25,10 @@ SVG_TEMPLATE = f"""<svg fill="none" width="490" height="340" viewBox="0 0 490 34
     .key {{ font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #58a6ff; font-weight: bold; }}
     .val {{ font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #c9d1d9; }}
     .prompt {{ font-family: 'Fira Code', monospace, Consolas; font-size: 13px; fill: #7fe436; font-weight: bold; }}
-    
-    {line_styles}
-
-    @keyframes fadeIn {{
-      to {{
-        opacity: 1;
-        transform: translateY(0);
-      }}
-    }}
   </style>
 
   <!-- Card Background -->
-  <rect class="bg" width="490" height="340" />
+  <rect class="bg" width="490" height="340" rx="10" ry="10" />
 
   <!-- Terminal Header Bar -->
   <path class="title-bar" d="M 0 10 C 0 4.477 4.477 0 10 0 L 480 0 C 485.523 0 490 4.477 490 10 L 490 32 L 0 32 Z" />
@@ -59,44 +40,44 @@ SVG_TEMPLATE = f"""<svg fill="none" width="490" height="340" viewBox="0 0 490 34
   <!-- Neofetch Content Lines -->
   <g transform="translate(24, 60)">
     <!-- Line 0: User Header -->
-    <g class="line-0">
+    <g>
       <text class="prompt" x="0" y="0">{NAME}</text>
       <text class="val" x="120" y="0">@github</text>
       <line x1="0" y1="10" x2="442" y2="10" stroke="#30363d" stroke-width="1"/>
     </g>
 
     <!-- Line 1: Role -->
-    <g class="line-1" transform="translate(0, 35)">
+    <g transform="translate(0, 35)">
       <text class="key" x="0" y="0">Role</text>
       <text class="val" x="100" y="0">› {TITLE}</text>
     </g>
 
     <!-- Line 2: Location -->
-    <g class="line-2" transform="translate(0, 65)">
+    <g transform="translate(0, 65)">
       <text class="key" x="0" y="0">Location</text>
       <text class="val" x="100" y="0">› {LOCATION}</text>
     </g>
 
     <!-- Line 3: Stack -->
-    <g class="line-3" transform="translate(0, 95)">
+    <g transform="translate(0, 95)">
       <text class="key" x="0" y="0">Stack</text>
       <text class="val" x="100" y="0">› {STACK}</text>
     </g>
 
     <!-- Line 4: Focus -->
-    <g class="line-4" transform="translate(0, 125)">
+    <g transform="translate(0, 125)">
       <text class="key" x="0" y="0">Interests</text>
       <text class="val" x="100" y="0">› {INTERESTS}</text>
     </g>
 
     <!-- Line 5: Highlights -->
-    <g class="line-5" transform="translate(0, 155)">
+    <g transform="translate(0, 155)">
       <text class="key" x="0" y="0">Projects</text>
       <text class="val" x="100" y="0">› {HIGHLIGHTS}</text>
     </g>
 
     <!-- Line 6: Color Palette Bar -->
-    <g class="line-6" transform="translate(0, 195)">
+    <g transform="translate(0, 195)">
       <rect fill="#21262d" x="0" y="0" width="20" height="12" rx="2" />
       <rect fill="#ff7b72" x="26" y="0" width="20" height="12" rx="2" />
       <rect fill="#7ee787" x="52" y="0" width="20" height="12" rx="2" />
