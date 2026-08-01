@@ -3,6 +3,7 @@
 Generate an animated SVG card (info-card.svg) styled like neofetch.
 """
 
+import html
 import os
 
 # Set STATIC=1 in environment variables if you want a non-animated preview frame
@@ -10,10 +11,10 @@ STATIC = os.getenv("STATIC") == "1"
 
 # Customize your information here
 NAME = "Tanishq Chhabra"
-TITLE = "Software Developer & Engineering Student"
+TITLE = html.escape("Software Developer & Engineering Student")
 LOCATION = "Chandiarh, India"
-STACK = " Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js"
-INTERESTS = "AI/ML, Web Systems, IoT & Hardware"
+STACK = html.escape("Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js")
+INTERESTS = html.escape("AI/ML, Web Systems, IoT & Hardware")
 HIGHLIGHTS = "Building Intellitrade"
 
 line_styles = "".join(f"""

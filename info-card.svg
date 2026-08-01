@@ -77,7 +77,7 @@
     <!-- Line 1: Role -->
     <g class="line-1" transform="translate(0, 35)">
       <text class="key" x="0" y="0">Role</text>
-      <text class="val" x="100" y="0">› Software Developer & Engineering Student</text>
+      <text class="val" x="100" y="0">› Software Developer &amp; Engineering Student</text>
     </g>
 
     <!-- Line 2: Location -->
@@ -89,13 +89,13 @@
     <!-- Line 3: Stack -->
     <g class="line-3" transform="translate(0, 95)">
       <text class="key" x="0" y="0">Stack</text>
-      <text class="val" x="100" y="0">›  Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js</text>
+      <text class="val" x="100" y="0">› Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js</text>
     </g>
 
     <!-- Line 4: Focus -->
     <g class="line-4" transform="translate(0, 125)">
       <text class="key" x="0" y="0">Interests</text>
-      <text class="val" x="100" y="0">› AI/ML, Web Systems, IoT & Hardware</text>
+      <text class="val" x="100" y="0">› AI/ML, Web Systems, IoT &amp; Hardware</text>
     </g>
 
     <!-- Line 5: Highlights -->
