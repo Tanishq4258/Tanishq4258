@@ -1,0 +1,45 @@
+name: Update Profile SVGs
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Run daily at midnight
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write # Required to allow GitHub Actions to commit changes
+
+jobs:
+  update-art:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests beautifulsoup4 pillow numpy opencv-python "rembg[cpu]"; fi
+
+      - name: Fetch Contributions
+        run: python scripts/fetch_contributions.py
+
+      - name: Render Heatmap SVG
+        run: python scripts/render_heatmap_svg.py
+
+      - name: Update Info Card
+        run: python scripts/make_info_card.py
+
+      - name: Update ASCII Art
+        run: python scripts/make_ascii_svg.py || echo "ASCII step failed, moving on"
+
+      - name: Commit and Push changes
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -m "chore: auto-update profile SVGs [skip ci]" && git push)
