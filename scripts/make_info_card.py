@@ -7,9 +7,9 @@ import html
 import os
 
 # Customize your information here
-NAME = "Tanishq Chhabra"
+NAME = "Tanishq4258"
 TITLE = html.escape("Software Developer & Engineering Student")
-LOCATION = "Chandiarh, India"
+LOCATION = "Chandigarh, India"
 STACK = html.escape("Python, C++, Java, SQL, JavaScript, HTML/CSS, React, Node.js")
 INTERESTS = html.escape("AI/ML, Web Systems, IoT & Hardware")
 HIGHLIGHTS = "Building Intellitrade"
