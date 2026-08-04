@@ -15,6 +15,7 @@ import re
 import sys
 
 import requests
+# pyrefly: ignore [missing-import]
 from bs4 import BeautifulSoup
 
 USERNAME = os.environ.get("GH_PROFILE_USER", "Tanishq4258")
