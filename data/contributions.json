@@ -1,22 +1,22 @@
 {
   "username": "Tanishq4258",
-  "generated_at": "2026-08-20T01:07:43Z",
+  "generated_at": "2026-08-21T01:12:02Z",
   "range": {
     "start": "2025-08-17",
+    "end": "2026-08-21"
+  },
+  "total_contributions": 189,
+  "active_days": 42,
+  "avg_per_active_day": 4.5,
+  "current_streak": {
+    "length": 10,
+    "start": "2026-08-11",
     "end": "2026-08-20"
   },
-  "total_contributions": 188,
-  "active_days": 41,
-  "avg_per_active_day": 4.6,
-  "current_streak": {
-    "length": 9,
-    "start": "2026-08-11",
-    "end": "2026-08-19"
-  },
   "longest_streak": {
-    "length": 9,
+    "length": 10,
     "start": "2026-08-11",
-    "end": "2026-08-19"
+    "end": "2026-08-20"
   },
   "best_day": {
     "date": "2025-09-24",
@@ -73,7 +73,7 @@
     },
     {
       "month": "2026-08",
-      "total": 77
+      "total": 78
     }
   ],
   "days": [
@@ -1551,6 +1551,10 @@
     },
     {
       "date": "2026-08-20",
+      "count": 1
+    },
+    {
+      "date": "2026-08-21",
       "count": 0
     }
   ]
